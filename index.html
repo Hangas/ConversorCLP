@@ -25,7 +25,7 @@
         <meta name="format-detection" content="telephone=no" />
         <meta name="msapplication-tap-highlight" content="no" />
         <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, target-densitydpi=medium-dpi, user-scalable=0" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
         <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
         <title>SNT-Consultores</title>
         <style>
@@ -36,47 +36,54 @@
     </head>
     <body>
         <div data-role="page" data-theme="b">
-            <div data-role="header" data-position="inline">
+            <div data-role="header" data-position="inline" data-fullscreen="true" data-position="fixed">
                 <h1>Conversor a CLP</h1>
                 <a class="ui-btn-right ui-btn ui-icon-recycle ui-btn-icon-notext ui-shadow ui-corner-all" data-role="button" role="button" id="actualizar"></a>
             </div>
-        <div data-role="content" data-theme="b">
-            <div class="ui-controlgroup-controls">
-                <div class="ui-grid-b">
-                    <div class="ui-block-a">Opcion</div>
-                    <div class="ui-block-b">Moneda</div>
-                    <div class="ui-block-c">Precio CLP</div>
+            <div data-role="content" data-theme="b">
+                <br>
+                <div class="ui-controlgroup-controls">
+                    <div class="ui-grid-b">
+                        <div class="ui-block-a">&nbsp&nbsp&nbspOpcion</div>
+                        <div class="ui-block-b">Moneda</div>
+                        <div class="ui-block-c">Precio CLP</div>
+                    </div>
+                    <br>
+                    <div class="ui-grid-b" style="height:25px;">
+                        <div class="ui-block-a"><input type="checkbox" style="position: relative; top: 7px; left: 30px;" id="check_euro" class="radio"/></div>
+                        <div class="ui-block-b">Euro <img src="images/europeanunion.png"></div>
+                        <div class="ui-block-c" style="position: relative; left: 10px;" id="precio_euro"></div>
+                    </div>
+                    <br>
+                    <div class="ui-grid-b" style="height:25px;">
+                        <div class="ui-block-a"><input type="checkbox" style="position: relative; top: 7px; left: 30px;" id="check_libra" class="radio"/></div>
+                        <div class="ui-block-b">Libra <img src="images/gb.png"></div>
+                        <div class="ui-block-c" style="position: relative; left: 10px;" id="precio_libra"></div>
+                    </div>
+                    <br>
+                    <div class="ui-grid-b" style="height:25px;">
+                        <div class="ui-block-a"><input type="checkbox" style="position: relative; top: 7px; left: 30px;" id="check_dolar" class="radio"/></div>
+                        <div class="ui-block-b">Dolar <img src="images/us.png"></div>
+                        <div class="ui-block-c" style="position: relative; left: 10px;" id="precio_dolar"></div>
+                    </div>
                 </div>
                 <br>
-                <div class="ui-grid-b" style="height:25px;">
-                    <div class="ui-block-a"><input type="checkbox" style="position: relative; top: 7px; left: 10px;" id="check_euro" class="radio"/></div>
-                    <div class="ui-block-b">Euro <img src="images/europeanunion.png"></div>
-                    <div class="ui-block-c" style="position: relative; left: 10px;" id="precio_euro"></div>
+                <div class="ui-grid-a">
+                    <div class="ui-block-a" style="position: relative; left:3px;"><input type="text" data-clear-btn="true" id="cantidad"></div>
+                    <div class="ui-block-b" style="position: relative; top: 3px; left: 5px; width: 140px;"><input type="button" value="Calcular" data-mini="true" class="ui-btn ui-shadow ui-corner-all" id="calcular"></div>
                 </div>
                 <br>
-                <div class="ui-grid-b" style="height:25px;">
-                    <div class="ui-block-a"><input type="checkbox" style="position: relative; top: 7px; left: 10px;" id="check_libra" class="radio"/></div>
-                    <div class="ui-block-b">Libra <img src="images/gb.png"></div>
-                    <div class="ui-block-c" style="position: relative; left: 10px;" id="precio_libra"></div>
-                </div>
-                <br>
-                <div class="ui-grid-b" style="height:25px;">
-                    <div class="ui-block-a"><input type="checkbox" style="position: relative; top: 7px; left: 10px;" id="check_dolar" class="radio"/></div>
-                    <div class="ui-block-b">Dolar <img src="images/us.png"></div>
-                    <div class="ui-block-c" style="position: relative; left: 10px;" id="precio_dolar"></div>
+                <div>
+                    <label style="position: relative; text-align: center;"><font size="7" id="resultado"></font></label>
                 </div>
             </div>
-            <br>
-            <div class="ui-grid-a">
-                <div class="ui-block-a" style="position: relative; left:3px;"><input type="tel" data-clear-btn="true" id="cantidad"></div>
-                <div class="ui-block-b" style="position: relative; top: 3px; left: 5px; width: 140px;"><input type="button" value="Calcular" data-mini="true" class="ui-btn ui-shadow ui-corner-all" id="calcular"></div>
+            <div data-role="footer" data-fullscreen="true" data-position="fixed">
+                <div data-role="navbar">
+                    <a href="#" class="ui-btn ui-corner-all ui-btn-left ui-mini ui-btn-icon-left ui-icon-star">Modo CLP</a>
+                    <a href="#" class="ui-btn ui-corner-all ui-btn-right ui-mini ui-btn-icon-right ui-icon-info">Modo € £ $</a>
+                </div>
             </div>
-            <br>
-            <div>
-                <label style="position: relative; text-align: center;"><font size="7" id="resultado"></font></label>
-            </div>
-        </div>
-    </div>
+        </div> 
         <script src="js/jquery-1.11.3.min.js"></script>
         <script src="js/jquery.mobile-1.4.5.min.js"></script>
         <script type="text/javascript" src="cordova.js"></script>
