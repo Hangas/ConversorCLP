@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+    <widget xmlns   = "http://www.w3.org/ns/widgets"
+        xmlns:gap   = "http://phonegap.com/ns/1.0"
+        id          = "com.snt.conversorclp"
+        versionCode = "10" 
+        version     = "1.0.0" >
+
+    <!-- versionCode is optional and Android only -->
+
+    <name>Conversor CLP</name>
+
+    <description>
+        Aplicacion para convertir de Euro, Libra Esterlina y Dolar a Peso Chileno. 
+    </description>
+
+    <author href="https://www.snt-consultores.net" email="contacto@snt-consultores.net">
+        Carlos Donoso Leyton 
+    </author>
+
+
+    <gap:plugin name=”org.apache.cordova.dialogs” />
+
+</widget>
