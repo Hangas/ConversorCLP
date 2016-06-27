@@ -17,6 +17,8 @@
         Carlos Donoso Leyton 
     </author>
 
-    <plugin name="com.developersanddesigners.phonegapdialogs" spec="1.1.1" source="pgb" />
+    <feature name="Notification">
+        <param name="android-package" value="org.apache.cordova.Notification" />
+    </feature>
 
 </widget>

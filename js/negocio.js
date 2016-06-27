@@ -120,7 +120,7 @@
 
         $('#ModoCLP').click( function() 
         {
-        	navigator.notification.alert('Modo CLP', alertCallback, 'Modo', 'Cerrar');
+        	navigator.notification.alert('Modo CLP');
         });
 
         $('#ModoEXT').click( function() 
