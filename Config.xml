@@ -21,4 +21,6 @@
         <param name="android-package" value="org.apache.cordova.Notification" />
     </feature>
 
+    <preference name="LoadingDialog" value="Please wait, the app is loading"/>
+
 </widget>
