@@ -117,4 +117,14 @@
         	cargaValores();
         	alert('Actualizado!');
         });
+
+        $('#ModoCLP').click( function() 
+        {
+        	navigator.notification.alert('Modo CLP', alertCallback, 'Modo', 'Cerrar');
+        });
+
+        $('#ModoEXT').click( function() 
+        {
+        	alert('Modo € £ $!');
+        });
     });
